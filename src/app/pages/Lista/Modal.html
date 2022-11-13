@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Nuevo Proveedor</h1>
+
+<div mat-dialog-content>
+  <p>Nombre</p>
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="data.nombre">
+  </mat-form-field>
+  
+  <p>Razon Social</p>
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="data.razonSocial">
+  </mat-form-field>
+
+  <p>RFC</p>
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="data.rfc">
+  </mat-form-field>
+
+  <p>Direccion</p>
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="data.direccion">
+  </mat-form-field>
+
+  <p>Costo</p>
+  <mat-form-field appearance="fill">
+    <input type="number" matInput [(ngModel)]="data.costo">
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="Cerrar()">Cerrar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Guardar</button>
+</div>

@@ -1,0 +1,19 @@
+
+.mat-toolbar {
+flex: 1 1 auto;
+min-height: 70px;
+}
+
+.mat-toolbar {
+margin: 0 auto;
+color: rgb(15, 15, 15);
+text-align: center;
+}
+
+.mat-toolbar {
+background: rgb(227, 227, 227);
+}
+.Logo
+{
+    width: 70%;
+}

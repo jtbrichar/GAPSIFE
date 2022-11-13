@@ -1,0 +1,65 @@
+
+<mat-card class="example-card">
+    
+    <mat-card-title>Lista de proveedores
+    </mat-card-title>
+    
+    <mat-card-subtitle>
+      <label (click)="abrirformulario()">Agregar proveedor</label>
+    </mat-card-subtitle>
+    <mat-card-content>
+        <cdk-virtual-scroll-viewport tvsItemSize class="wrapper mat-elevation-z2">
+
+            <table mat-table [dataSource]="this.dataSource">
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          
+
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+              </ng-container>
+          
+              <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <td mat-cell *matCellDef="let element">{{element.nombre}}</td>
+              </ng-container>
+              
+              <ng-container matColumnDef="razonSocial">
+                <th mat-header-cell *matHeaderCellDef>Razon Social</th>
+                <td mat-cell *matCellDef="let element">{{element.razonSocial}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="rfc">
+                <th mat-header-cell *matHeaderCellDef>RFC</th>
+                <td mat-cell *matCellDef="let element">{{element.rfc}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="direccion">
+                <th mat-header-cell *matHeaderCellDef>Direcicon</th>
+                <td mat-cell *matCellDef="let element">{{element.direccion}}</td>
+              </ng-container>
+              <ng-container matColumnDef="costo">
+                <th mat-header-cell *matHeaderCellDef>Costo</th>
+                <td mat-cell *matCellDef="let element">{{element.costo}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="acciones">
+                <th mat-header-cell  *matHeaderCellDef > acciones </th>
+                <td mat-cell *matCellDef="let element">
+                      <button mat-icon-button (click)="eliminar(element.id)" color="warn" aria-label="Example icon button with a heart icon">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                      
+                </td>
+              </ng-container>
+
+            </table>
+          
+          </cdk-virtual-scroll-viewport>
+    </mat-card-content>
+</mat-card>
+
+
+
